@@ -1,0 +1,267 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --black: #212121;
+    --blue: #19b2fc;
+    --white: #fff;
+    --offWhite: #f6f6f6;
+    --gray: #b4b4b4;
+}
+
+body {
+    background-color: var(--offWhite);
+}
+
+a {
+    transition: 0.3s all ease-in-out;
+}
+
+.container {
+    width: 98%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */ 
+
+header {
+    background-color: var(--white);
+    padding: 10px 0;
+    box-shadow: 0 1px 3px 0 var(--gray);
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a#logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 28px;
+}
+
+header a#logo span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+header nav#mainMenu {
+    display: flex;
+    gap: 40px;
+}
+
+header nav#mainMenu a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--black);
+    position: relative;
+    padding: 5px;
+}
+
+header nav#mainMenu a::before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--blue);
+    transition: 0.3s all ease-in-out;
+}
+
+header nav#mainMenu a.active,
+header nav#mainMenu a:hover {
+    color: var(--blue);
+}
+
+header nav#mainMenu a.active::before,
+header nav#mainMenu a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+header nav#iconMenu  {
+    display: flex;
+    gap: 15px;
+}
+
+header nav#iconMenu a {
+    text-decoration: none;
+    background-color: var(--blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav#iconMenu a svg {
+    width: 25px;
+    height: 25px;
+}
+
+header nav#iconMenu a svg path {
+    fill: var(--white);
+    transition: 0.3s all ease-in-out;
+}
+
+header nav#iconMenu a svg circle,
+header nav#iconMenu a svg line {
+    stroke: var(--white);
+    transition: 0.3s all ease-in-out;
+}
+
+header nav#iconMenu a:hover svg path {
+    fill: var(--black);
+}
+
+header nav#iconMenu a:hover svg circle,
+header nav#iconMenu a:hover svg line {
+    stroke: var(--black);
+}
+
+/* Header End */
+
+
+/* Banner */
+
+section#banner {
+    background-color: var(--white);
+}
+
+section#banner .container {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section#banner aside,
+section#banner img {
+    width: 50%;
+}
+
+section#banner aside h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+section#banner aside h1 span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+section#banner aside p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black);
+    margin: 20px 0;
+}
+
+/* Banner End */
+
+
+/* Search Bar */
+
+form#searchBar {
+    position: relative;
+    width: 50px;
+    transition: 0.3s all ease-in-out;
+}
+
+form#searchBar.active {
+    width: 100%;
+}
+
+form#searchBar::before {
+    position: absolute;
+    content: attr(data-info);
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    font-weight: 500;
+    color: var(--blue);
+    overflow: hidden;
+    transition: 0.2s all ease-in-out;
+    white-space: nowrap;
+}
+
+form#searchBar.active::before {
+    width: 0;
+}
+
+form#searchBar input[type=text] {
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 25px 0 0 25px;
+    transition: 0.3s all ease-in-out;
+    border: transparent solid 2px;
+    width: 0;
+}
+
+form#searchBar.active input[type=text] {
+    width: calc(100% - 60px);
+    padding: 6px 12px;
+    border-color: var(--blue);
+}
+
+form#searchBar button[type=button] {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 500%;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+form#searchBar button[type=button] svg {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s all ease;
+}
+
+form#searchBar.active button[type=button] svg.search,
+form#searchBar button[type=button] svg.close {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+form#searchBar button[type=button] svg.search,
+form#searchBar.active button[type=button] svg.close {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Search Bar End */
