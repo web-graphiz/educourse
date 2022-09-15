@@ -265,3 +265,125 @@ form#searchBar.active button[type=button] svg.close {
 }
 
 /* Search Bar End */
+
+/* Latest Courses */
+
+section#latestCourses {
+    padding: 80px 0;
+}
+
+section#latestCourses h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--black);
+}
+
+section#latestCourses h2 span {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--blue);
+}
+
+section#latestCourses .flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+@media(max-width: 996px) {
+    section#latestCourses .flexRow {
+        flex-flow: wrap;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    section#latestCourses .flexRow {
+        flex-flow: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+section#latestCourses .flexRow aside {
+    width: calc((100% - 30px) / 4);
+    height: 250px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 30px;
+    border-radius: 5px;
+    transition: 0.4s all ease-in-out;
+    perspective: 600px;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.3);
+}
+
+@media(max-width: 996px) {
+    section#latestCourses .flexRow aside {
+        width: calc((100% - 20px) / 2);
+    }
+}
+
+@media(max-width: 768px) {
+    section#latestCourses .flexRow aside {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+section#latestCourses .flexRow aside img {
+    width: 100px;
+}
+
+section#latestCourses .flexRow aside h3 {
+    color: var(--offWhite);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+}
+
+section#latestCourses .flexRow aside .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-flow: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s all ease-in-out;
+    transform-origin: left center;
+    transform: rotateY(-90deg);
+}
+
+section#latestCourses .flexRow aside:hover .info {
+    opacity: 1;
+    visibility: visible;
+    transform: rotateY(0deg);
+}
+
+section#latestCourses .flexRow aside .info p {
+    font-size: 15px;
+    color: var(--black);
+}
+
+section#latestCourses .flexRow aside .info a {
+    font-size: 14px;
+    background-color: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* Latest Courses End */
