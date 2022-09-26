@@ -8,6 +8,7 @@
 :root {
     --black: #212121;
     --blue: #19b2fc;
+    --blueOpacity: #19b0fcc4;
     --white: #fff;
     --offWhite: #f6f6f6;
     --gray: #b4b4b4;
@@ -272,6 +273,7 @@ section#latestCourses {
     padding: 80px 0;
 }
 
+section#teachers h2,
 section#latestCourses h2 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -280,6 +282,7 @@ section#latestCourses h2 {
     color: var(--black);
 }
 
+section#teachers h2 span,
 section#latestCourses h2 span {
     font-family: 'Montserrat', sans-serif;
     color: var(--blue);
@@ -387,3 +390,111 @@ section#latestCourses .flexRow aside .info a {
 }
 
 /* Latest Courses End */
+
+/* Featured Teachers */
+
+section#teachers {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+section#teachers .flexBox {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+@media (max-width: 996px) {
+    section#teachers .flexBox {
+        flex-flow: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    section#teachers .flexBox {
+        flex-flow: column;
+        align-items: center;
+    }
+}
+
+section#teachers .teacher {
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    position: relative;
+}
+
+section#teachers .teacher1 {
+    background-image: url('../images/teacher1.jpg');
+}
+
+section#teachers .teacher2 {
+    background-image: url('../images/teacher2.jpg');
+}
+
+section#teachers .teacher3 {
+    background-image: url('../images/teacher3.jpg');
+}
+
+section#teachers .teacher4 {
+    background-image: url('../images/teacher4.jpg');
+}
+
+section#teachers .teacher::before {
+    position: absolute;
+    content: attr(data-name);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--blueOpacity);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    transform: rotate(360deg) translate(-20%, 40%) scale(0.3);
+    transition: 0.2s letter-spacing ease-in-out,
+                0.6s transform ease-in-out;
+}
+
+section#teachers .teacher:hover::before {
+    transform: rotate(0deg) translate(0%) scale(1);
+    letter-spacing: 8px;
+    transition: 0.6s letter-spacing ease-in-out 0.4s,
+                0.6s transform ease-in-out;
+}
+
+section#teachers .teacher::after {
+    position: absolute;
+    content: attr(data-field);
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    opacity: 0;
+    transition: 0.2s all ease-in-out 0s;
+}
+
+section#teachers .teacher:hover::after {
+    opacity: 1;
+    transition: 0.5s all ease-in-out 0.5s;
+}
+
+/* Featured Teachers End */
+
+section#enroll {
+    height: 100vh;
+}
