@@ -495,6 +495,155 @@ section#teachers .teacher:hover::after {
 
 /* Featured Teachers End */
 
+/* Enroll */
 section#enroll {
-    height: 100vh;
+    background-color: var(--blue);
+    padding: 80px 0;
 }
+
+section#enroll .flexRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section#enroll article {
+    width: 50%;
+}
+
+section#enroll article h2 {
+    font-size: 35px;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+section#enroll article h2 span {
+    color: var(--black);
+}
+
+section#enroll article p {
+    color: var(--offWhite);
+    font-weight: 500;
+}
+
+section#enroll aside {
+    width: 40%;
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+section#enroll aside form {
+    padding: 30px;
+}
+
+section#enroll aside form h2 {
+    font-size: 30px;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+section#enroll aside form input[type=text],
+section#enroll aside form input[type=email],
+section#enroll aside form input[type=tel],
+section#enroll aside form select {
+    width: calc(100% - 18px);
+    background-color: var(--white);
+    border: var(--gray) solid 1px;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 5px;
+}
+
+section#enroll aside form input[type=text]:focus,
+section#enroll aside form input[type=email]:focus,
+section#enroll aside form input[type=tel]:focus,
+section#enroll aside form select:focus {
+    border-color: var(--blue);
+}
+
+section#enroll aside form select {
+    width: 100%;
+}
+
+section#enroll aside form button[type=submit] {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--blue);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+section#enroll aside form button[type=submit]:hover {
+    background-color: var(--black);
+}
+
+@media (max-width: 768px) {
+    section#enroll .flexRow {
+        flex-flow: column;
+    }
+
+    section#enroll article {
+        width: 100%;
+    }
+
+    section#enroll aside {
+        width: 100%;
+        max-width: 500px;
+        margin-top: 50px;
+    }
+}
+
+/* End Enroll */
+
+/* Footer */
+
+footer {
+    background-color: var(--black);
+    padding: 20px 0;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+footer .flexRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 596px) {
+
+    footer .flexRow {
+        flex-flow: column;
+        gap: 10px;
+    }
+}
+
+footer nav a {
+    margin-left: 10px;
+}
+
+footer nav a svg {
+    width: 20px;
+    height: 20px;
+}
+
+footer nav a svg path,
+footer nav a svg circle {
+    fill: var(--white);
+    transition: 0.3s all ease-in-out;
+}
+
+footer nav a:hover svg path,
+footer nav a:hover svg circle {
+    fill: var(--blue);
+}
+
+/* End Footer */
